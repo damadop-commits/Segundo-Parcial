@@ -1,1 +1,1 @@
-# Segundo-Parcial
+# Programacion_1_UMG
