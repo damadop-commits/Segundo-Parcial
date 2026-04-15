@@ -1,0 +1,17 @@
+#include <iostream>
+
+using namespace std;
+
+
+
+int numero(int numero1){
+return numero1;
+
+}
+  
+   main(){
+   
+   
+   
+   
+   }

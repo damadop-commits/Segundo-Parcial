@@ -1,0 +1,74 @@
+#include <iostream>   // Librería para entrada y salida (cout, cin)
+#include <string>     // Librería para usar string
+
+using namespace std;
+
+// Definición de la clase
+class Producto {
+
+private:
+    // 🔒 ATRIBUTOS (datos del objeto, protegidos)
+    string nombre;
+    double precio;
+
+public:
+
+    // 🟢 CONSTRUCTOR
+    // Se ejecuta automáticamente al crear el objeto
+    Producto(string nombre, double precio){
+        // this-> se usa para diferenciar atributo de parámetro
+        this->nombre = nombre;
+        this->precio = precio;
+    }
+
+    // 🟡 SETTER (modifica el valor del precio)
+    void setPrecio(double precio){
+        // Validación (evita valores negativos)
+        if (precio > 0){
+            this->precio = precio;
+        } else {
+            cout << "Precio invalido" << endl;
+        }
+    }
+
+    // 🔵 GETTER (obtiene el valor del precio)
+    double getPrecio(){
+        return precio;
+    }
+
+    // 🟣 MÉTODO (función de la clase)
+    void mostrar(){
+        cout << "Producto: " << nombre << endl;
+        cout << "Precio: Q." << precio << endl;
+    }
+
+    // 🔴 MÉTODO CON CONDICIÓN
+    void categoria(){
+        if (precio > 2000){
+            cout << "El producto es CARO" << endl;
+        } else {
+            cout << "El producto es BARATO" << endl;
+        }
+    }
+};
+
+// 🔥 FUNCIÓN PRINCIPAL
+int main(){
+
+    // 🧩 CREACIÓN DEL OBJETO (instancia de la clase)
+    Producto p1("Laptop", 3000);
+
+    // 📌 Mostrar datos iniciales
+    p1.mostrar();
+
+    // 📌 Cambiar precio usando setter
+    p1.setPrecio(1500);
+
+    // 📌 Obtener precio usando getter
+    cout << "Nuevo precio: Q." << p1.getPrecio() << endl;
+
+    // 📌 Mostrar categoría según precio
+    p1.categoria();
+
+    return 0;
+}
